@@ -1,11 +1,17 @@
 import sys  
+#let "n" be the number of floor and "k" be the number of floors
   
   
 def eggDrop(n, k): 
+    # If there are no floors, then no trials 
+    # needed. OR if there is one floor, one 
+    # trial needed. 
   
      
     if (k == 1 or k == 0): 
         return k 
+        # We need k trials for one egg  
+        # and k floors
   
      
     if (n == 1): 
@@ -20,6 +26,9 @@ def eggDrop(n, k):
                   eggDrop(n, k - x)) 
         if (res < min): 
             min = res 
+            # Consider all droppings from 1st  
+            # floor to kth floor and return  
+             # the minimum of these values plus 1. 
   
     return min + 1
 if __name__ == "__main__": 
